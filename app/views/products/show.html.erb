@@ -21,8 +21,20 @@
           <dt>Quantity</dt>
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
-          <dd><%= @product.price %></dd>
+          <dd><%= to_currency(@product.price) %></dd>
+          <dt>HST Price</dt>
+          <dd><%= to_currency(@product.price_hst) %></dd>
+          <br>
+          <dt></dt>
+          <dd>  <!-- products_path is the value of the helper function products_path -->
+            <%= link_to 'Back to Homepage', products_path %>
+          </dd>
+            <!-- Could also do:
+            <a href="<%= products_path %>">
+              Back To Homepage
+            </a> -->
         </dl>
+
       </div>
     </div>
 
