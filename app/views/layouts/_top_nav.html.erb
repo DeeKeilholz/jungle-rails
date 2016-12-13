@@ -46,5 +46,13 @@
         </li>
       </ul>
     </div>
+
+    <div class="homepage_login_logout" >
+    <% if current_user %>
+    Signed in as <%= current_user.first_name %>  ||  <%= link_to 'Logout', '/logout' %>
+    <% else %>
+      <%= link_to 'Login', '/login' %>  ||  <%= link_to 'Signup', '/signup' %>
+    <% end %>
+  </div>
   </div>
 </nav>
