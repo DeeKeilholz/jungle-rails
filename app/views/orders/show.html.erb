@@ -1,3 +1,11 @@
+<!-- Change the Order show page to contain:
+
+The items in the order and:
+Their image, name and description
+Their respective quantities and line item totals
+The final amount for the order
+The email that was used -->
+
 <section class="orders-show">
 
   <header class="page-header">
@@ -5,8 +13,11 @@
   </header>
 
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
-  </div>
+    <h3>Thank you for your order, <%= current_user.email %>!</h3>
+    <p>Here's your order summary:</p>
+    <div class="order-summary">
+      <%= render 'item' %>
+   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
