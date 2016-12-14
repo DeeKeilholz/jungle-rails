@@ -5,6 +5,7 @@
    def new
    end
 
+  
    def create
      @user = User.new(user_params)
 
@@ -15,6 +16,7 @@
        flash[:notice] = "Something went wrong. Try again."
        redirect_to '/signup'
      end
+
    end
 
    private

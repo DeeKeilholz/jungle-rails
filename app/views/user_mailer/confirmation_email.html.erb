@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to JungleRails!</h1>
+    <p>
+      We have received your order and will get your items to you as soon as possible.
+      Here's your order summary:
+    </p>
+
+    <% @line_items.each do |line_item| %>
+       <tr>
+         <td>
+           <h4><%= line_item.product.name %></h4>
+         </td>
+         <td>
+           <%= number_to_currency(line_item.product.price_cents / 100) %>
+         </td>
+         <td>
+           <%= line_item.quantity %>
+         <td>
+           <% total = number_to_currency(line_item.product.price_cents / 100 * line_item.quantity) %>
+           <%= total %>
+         </td>
+       </tr>
+       <% end %>
+
+    <p>Thanks so much and have a great day!</p>
+  </body>
+</html>
