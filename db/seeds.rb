@@ -136,7 +136,7 @@ cat3.products.create!({
 
 Review.create!({
   product_id: 4,
-  user_id: 3,
+  user_id: 1,
   description: Faker::Hipster.sentence,
   rating: 1,
 })
@@ -150,11 +150,21 @@ Review.create!({
 
 
 Review.create!({
-  product_id: 1,
-  user_id: 4,
+  product_id: 2,
+  user_id: 1,
   description: Faker::Hipster.sentence,
   rating: 3,
 })
+
+# users
+
+# User.create!({
+#   id: 1,
+#   first_name: 'Dee',
+#   last_name: 'Keilholz',
+#   email: 'deekeilholz@gmail.com',
+#   password_digest: 'test',
+# })
 
 
 

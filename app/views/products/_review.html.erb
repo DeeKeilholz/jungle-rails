@@ -1,0 +1,30 @@
+
+<div class="container">
+  <div class="row">
+    <div class= "col-sm-12">
+      <div class="page-header">
+        <h2> Comments </h2>
+      </div>
+
+      <% @product.reviews.each_slice(1) do |reviews| %>
+
+      <div class="row">
+        <% reviews.each do |review| %>
+          <div class="col-sm-5">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <strong>Rating: <%= review.rating %></strong>
+              </div>
+                <div class="panel-body">
+                  <%= review.description %>
+                </div>
+            </div>
+         </div>
+        <% end %>
+      </div>
+
+     <% end %>
+
+     </div>
+  </div>
+</div>
