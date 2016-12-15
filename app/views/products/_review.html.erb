@@ -9,7 +9,7 @@
       <% @product.reviews.each_slice(1) do |reviews| %>
 
       <div class="row">
-        <% reviews.each do |review| %>
+        <% reviews.reverse_each do |review| %>
           <div class="col-sm-5">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -20,10 +20,10 @@
                 </div>
             </div>
          </div>
-        <% end %>
+         <% end %>
       </div>
 
-     <% end %>
+      <% end %>
 
      </div>
   </div>
