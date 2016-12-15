@@ -4,14 +4,14 @@ class Product < ActiveRecord::Base
   monetize :price_cents, numericality: true
   mount_uploader :image, ProductImageUploader
 
-  belongs_to :category
+   belongs_to :category
+   has_many :reviews
+   has_many :line_items
 
   #presence true means it's required
-  validates :name, presence: true, length: {
+  validates :name, presence: true
     # validation method in Active Record
-    minimum: 3,
-    maximum: 25
-  }
+
   validates :price, presence: true, numericality: {
     greater_than_or_equal_to: 1
   }
